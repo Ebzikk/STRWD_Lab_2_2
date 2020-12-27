@@ -1,0 +1,17 @@
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link  type="text/css" rel="stylesheet" href="/css/site.css" />
+</head>
+@model IEnumerable<ArtsNamespace.Models.Album>
+
+@foreach (var album in Model)
+{
+    <div>
+        @Html.ActionLink(album.Name, "GetById", "Album", new { id = album.AlbumId});
+        <hr />
+    </div>
+}
+<form action="Album/AddForm" method="get">
+    <input type="submit" class="btn btn-outline-info" value="Додати" />
+</form>
+
